@@ -1,19 +1,21 @@
-#include <iostream>
+#include "iostream"
 
 using namespace std;
 
-
-int * createArray(const int n)
+void fill1(int a[], int size)
 {
-    int a[n];
-    return a;
+    for (int i = 0; i < size; i++)
+    {
+        a[i] = i;
+        cout << a[i] << " ";
+    }
 }
-int main()
+
+void fill2(int * a, int size)
 {
-    int x;
-    cin >> x;
-    
-    int * a = createArray(x);
-    
-    return 0;
+    for (int * p = a; p < a + size; p++)
+    {
+        *p = p - a;
+        cout << *p << " ";
+    }
 }
